@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .quadrante {
+            border: 5px;
+            height: 150px;
+            width: 150px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        .Tabuleiro {
+            display: flex;
+            flex-wrap: wrap;
+            height: 456px;
+            width: 456px;
+            margin: auto;
+            margin-top: 50px;
+            border: 1px solid black;
+        }
+        .botoes {
+            display: flex;
+        }
+        .X {
+            background-color: lightcoral;
+        }
+        .bola{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>JOGO DA VELHA</h1>
+        <div class="Tabuleiro">
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ1"></h1>
+                    <h1 id="BQ1"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ1()">O</button>
+                    <button class="X" onclick="marcarXQ1()">X</button>
+                </div>
+            </div>
+
+
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ2"></h1>
+                    <h1 id="BQ2"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ2()">O</button>
+                    <button class="X" onclick="marcarXQ2()">X</button>
+                </div>
+            </div>
+
+
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ3"></h1>
+                    <h1 id="BQ3"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ3()">O</button>
+                    <button class="X" onclick="marcarXQ3()">X</button>
+                </div>
+            </div>
+
+
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ4"></h1>
+                    <h1 id="BQ4"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ4()">O</button>
+                    <button class="X" onclick="marcarXQ4()">X</button>
+                </div>
+            </div>
+
+
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ5"></h1>
+                    <h1 id="BQ5"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ5()">O</button>
+                    <button class="X" onclick="marcarXQ5()">X</button>
+                </div>
+            </div>
+
+
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ6"></h1>
+                    <h1 id="BQ6"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ6()">O</button>
+                    <button class="X" onclick="marcarXQ6()">X</button>
+                </div>
+            </div>
+
+
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ7"></h1>
+                    <h1 id="BQ7"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ7()">O</button>
+                    <button class="X" onclick="marcarXQ7()">X</button>
+                </div>
+            </div>
+
+
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ8"></h1>
+                    <h1 id="BQ8"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ8()">O</button>
+                    <button class="X" onclick="marcarXQ8()">X</button>
+                </div>
+            </div>
+
+
+            <div class="quadrante">
+                <div class="botoes">
+                    <h1 id="XQ9"></h1>
+                    <h1 id="BQ9"></h1>
+                </div>
+                <div>
+                    <button class="bola" onclick="marcarBQ9()">O</button>
+                    <button class="X" onclick="marcarXQ9()">X</button>
+                </div>
+            </div>
+
+    </main>
+
+
+    <script> 
+        function marcarXQ1(){
+            let XQ1 = window.document.getElementById("XQ1");
+            XQ1.innerText = 'X';
+        }
+        function marcarBQ1(){
+            let BQ1 = window.document.getElementById("BQ1");
+            BQ1.innerText = 'O';
+        }
+
+        function marcarXQ2(){
+            let XQ2 = window.document.getElementById("XQ2");
+            XQ2.innerText = 'X';
+        }
+        function marcarBQ2(){
+            let BQ2 = window.document.getElementById("BQ2");
+            BQ2.innerText = 'O';
+        }
+
+        function marcarXQ3(){
+            let XQ3 = window.document.getElementById("XQ3");
+            XQ3.innerText = 'X';
+        }
+        function marcarBQ3(){
+            let BQ3 = window.document.getElementById("BQ3");
+            BQ3.innerText = 'O';
+        }
+
+        function marcarXQ4(){
+            let XQ4 = window.document.getElementById("XQ4");
+            XQ4.innerText = 'X';
+        }
+        function marcarBQ4(){
+            let BQ4 = window.document.getElementById("BQ4");
+            BQ4.innerText = 'O';
+        }
+
+        function marcarXQ5(){
+            let XQ5 = window.document.getElementById("XQ5");
+            XQ5.innerText = 'X';
+        }
+        function marcarBQ5(){
+            let BQ5 = window.document.getElementById("BQ5");
+            BQ5.innerText = 'O';
+        }
+
+        function marcarXQ6(){
+            let XQ6 = window.document.getElementById("XQ6");
+            XQ6.innerText = 'X';
+        }
+        function marcarBQ6(){
+            let BQ6 = window.document.getElementById("BQ6");
+            BQ6.innerText = 'O';
+        }
+
+        function marcarXQ7(){
+            let XQ7 = window.document.getElementById("XQ7");
+            XQ7.innerText = 'X';
+        }
+        function marcarBQ7(){
+            let BQ7 = window.document.getElementById("BQ7");
+            BQ7.innerText = 'O';
+        }
+        
+        function marcarXQ8(){
+            let XQ8 = window.document.getElementById("XQ8");
+            XQ8.innerText = 'X';
+        }
+        function marcarBQ8(){
+            let BQ8 = window.document.getElementById("BQ8");
+            BQ8.innerText = 'O';
+        }
+
+        function marcarXQ9(){
+            let XQ9 = window.document.getElementById("XQ9");
+            XQ9.innerText = 'X';
+        }
+        function marcarBQ9(){
+            let BQ9 = window.document.getElementById("BQ9");
+            BQ9.innerText = 'O';
+        }
+
+
+
+        
+
+
+    </script>
+</body>
+</html>
