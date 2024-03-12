@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=but, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .titulo {
+             color: white;
+        }
+        main {
+            height: 500px;
+            width: 300px;
+            margin: auto;
+            background-color:#171C26;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            border: 5px solid #F2BA52;
+            border-radius: 10px;
+        }
+        .resultado {
+            width: 295px;
+            height: 100px;
+            background-color: white;
+            text-align: center;
+        }
+        .botoes {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .botoes > button{
+            width: 295px;
+            height: 50px;
+            color: white;
+            border-radius: 10px;
+            background-color: #F2BA52;
+        }
+        .botoes > button:hover {
+            background-color: #f2ba52a6;
+            transition-duration: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="titulo">
+            <h1>Calculadora</h1>
+        </div>
+        <div class="resultado">
+            <h1 id="resultados"></h1>
+        </div>
+        <div class="botoes">
+            <button onclick="somar()">Somar</button>
+            <button onclick="subtrair()">Subtrair</button>
+            <button onclick="dividir()">Dividir</button>
+            <button onclick="multiplicar()">Multiplicar</button>
+        </div>
+    </main>
+    <script>
+        function somar() {
+            let n1 = window.prompt('Digite um numero:')
+            let n2 = window.prompt('Digite um numero:')
+            let resultado = parseInt(n1) + parseInt(n2)
+            resultados.innerText = resultado
+        }
+        function subtrair() {
+            let n1 = window.prompt('Digite um numero:')
+            let n2 = window.prompt('Digite um numero:')
+            let resultado = parseInt(n1) - parseInt(n2)
+            resultados.innerText = resultado
+        }
+        function dividir() {
+            let n1 = window.prompt('Digite um numero:')
+            let n2 = window.prompt('Digite um numero:')
+            let resultado = parseInt(n1) / parseInt(n2)
+            resultados.innerText = resultado
+        }
+        function multiplicar() {
+            let n1 = window.prompt('Digite um numero:')
+            let n2 = window.prompt('Digite um numero:')
+            let resultado = parseInt(n1) *  parseInt(n2)
+            resultados.innerText = resultado
+        }
+    </script>
+</body>
+</html>
