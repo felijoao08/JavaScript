@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA 10 JS</title>
+    <style>
+        div {
+            font: normal 20px arial;
+            background-color: green;
+            border-radius: 100%;
+            color: white;
+            margin: auto;
+            margin-top: 200px;
+            height: 200px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" id="area">Intereja...</div>
+</body>
+<script>
+    function clicar(){
+        let area =  window.document.getElementById('area');
+        area.innerText = 'clicou!';
+        area.style.background = 'red';
+    }
+    function entrar() {
+        let area = window.document.getElementById('area');
+        area.innerText = 'Entrou!';
+    }
+    function sair() {
+        let area = window.document.getElementById('area');
+        area.innerText = 'saiu!';
+        area.style.background = 'green';
+    }
+</script>
+</html>
