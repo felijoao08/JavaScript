@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA 9</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        main {
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            margin-bottom: 20px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border-radius: 10px;
+            
+        }
+        button {
+            background-color: greenyellow;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        button:hover{ 
+            padding: 11px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="mensagem">Qual será a proxima cor?</div>
+        <button onclick="MudarCor()" id="botao">Clique aqui!</button>
+    </main>
+    <script>
+         let contador = 0
+        function MudarCor() {
+            contador++
+            var p1 = document.getElementById('mensagem')
+            let list = ["Red", "Blue", "Green", "Black", "Pink", "Purple", "Yellow", "Orange", "Brown", "Gray", "White",
+            "Cyan", "Magenta", "Turquoise", "Lavender", "Indigo", "Maroon", "Olive", "Coral", "Salmon", "Teal",
+            "Gold", "Silver", "Beige", "Ivory", "Khaki", "Mint", "Peach", "Plum", "Slate", "Charcoal", "Periwinkle",
+            "Rose", "Ruby", "Emerald", "Sapphire", "Amber", "Ruby", "Burgundy", "Marigold", "Turquoise", "Jade",
+            "Aquamarine", "Cinnamon", "Mauve", "Pearl", "Pewter", "Lilac", "Topaz", "Ebony", "Ivory", "Onyx",
+            "Sepia", "Tangerine", "Vermilion", "Celadon", "Cerulean", "Mulberry", "Lavender", "Orchid",
+            "Violet", "Apricot", "Copper", "Brass", "Cyan", "Steel", "Azure", "Olive", "Sand", "Sienna", "Umber",
+            "Magenta", "Mahogany", "Jade", "Cyan", "Ruby", "Alabaster", "Taupe", "Celery", "Citrine", "Cobalt",
+            "Denim", "Caramel", "Mulberry", "Persimmon", "Pine", "Sage", "Vermilion", "Currant", "Puce",
+            "Rust", "Mauve", "Burgundy", "Buff", "Cornflower", "Espresso", "Ginger", "Chartreuse", "Vermilion",
+            "Amethyst", "Bronze", "Honey", "Lapis", "Ochre", "Sapphire", "Tawny", "Topaz", "Wisteria", "Coral",
+            "Saffron", "Ruby", "Azure", "Mint", "Marigold", "Coral", "Persimmon", "Mulberry", "Onyx", "Mauve",
+            "Lavender", "Plum", "Tangerine", "Coral", "Gold", "Steel", "Platinum", "Indigo", "Cerulean", "Jade",
+            "Ruby", "Salmon", "Pearl", "Topaz", "Mahogany", "Cyan", "Coral", "Ebony", "Ivory", "Saffron", "Brass",
+            "Crimson", "Mulberry", "Coral", "Topaz", "Emerald", "Sienna", "Marigold", "Burgundy", "Lavender",
+            "Rose", "Mint", "Slate", "Steel", "Celadon", "Mauve", "Sapphire", "Ivory", "Cyan", "Marigold"
+            ]
+            p1.style.backgroundColor = list[contador]
+            
+        }
+    </script>
+</body>
+</html>
