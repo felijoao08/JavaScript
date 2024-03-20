@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo da forca</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Jogo da Forca</h1>
+            <h2>Objetos da computação</h2>
+            <h3>chances:</h3>
+            <p id="chances">5</p>
+            <h3>ja foram:</h3>
+            <p id="tentativas"></p>
+            <p id="palavraNaTela"></p>
+        </div>
+        <div>
+            <label for="letra">Digite uma letra</label> 
+            <input type="text" id="letraEscolhida">
+            <!--<button onclick="escolherpalavra()">Sortear palavra</button> -->
+            <button onclick="verificarLetra()" id="letra" name="letra" value="letra" >Verificar</button>
+        </div>
+        <script>
+            let palavraSorteada = escolherpalavra();
+            //verificar a palavra toda é importante!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            function escolherpalavra() {
+                let lista = ['computador', 'teclado', 'mouse', 'fone', 'monitor']; //lista de elementos
+                let indiceAleatorio =  Math.floor(Math.random() * lista.length); //sorteando um indice 
+                let elementoSorteado = lista[indiceAleatorio]; //pegando um elemento da lista a partir fo indice
+                let tamanhoPalavra = elementoSorteado.length; //verificando o tamanho da palavra
+                let palavraNaTela = window.document.getElementById('palavraNaTela')
+                palavraNaTela.innerHTML = '_ '.repeat(tamanhoPalavra)
+                console.log(elementoSorteado + tamanhoPalavra);
+                return elementoSorteado;
+            }
+
+            function verificarLetra() {
+                let letra = window.document.getElementById('letraEscolhida').value;
+                contador = 0;
+                let palavraCerta = palavraSorteada.replace(/\s/g, ''); // Removendo os espaços
+                
+                let listaChutes = [] //lista para guardar letraas que ja foram
+                let chutes = window.document.getElementById('tentativas');
+                tentativas.innerHTML = listaChutes;
+
+
+                for (let i of palavraCerta) {
+                    contador = contador + 1;
+                    if (i === letra) {
+                        console.log('tem');
+                        let palavraNaTela = window.document.getElementById('palavraNaTela');
+                        let novoTexto = palavraNaTela.innerText.substring(0, contador-1) + letra + palavraNaTela.innerText.substring(contador + 1);
+                        palavraNaTela.innerText = novoTexto;
+                        listaChutes.push(letra);
+                        break;
+                    }
+                    else if (letra != i) {
+                        listaChutes.push(letra);
+                    }
+                }
+             }
+        </script>
+    </main>
+</body>
+</html>
