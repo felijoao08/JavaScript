@@ -4,63 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jogo da forca</title>
+    <link rel="stylesheet" href="jogoForca.css">
 </head>
 <body>
-    <main>
-        <div>
-            <h1>Jogo da Forca</h1>
-            <h2>Objetos da computação</h2>
-            <h3>chances:</h3>
-            <p id="chances">5</p>
-            <h3>ja foram:</h3>
-            <p id="tentativas"></p>
+    <main onclick="mudarCor()" id="jogo">
+        <div class="divTitulos">
+            <h1 class="titulo">Jogo da Forca</h1>
+            <h2 class="subtitulo">Objetos da computação</h2>
+            <p id="avisos"></p>
             <p id="palavraNaTela"></p>
         </div>
-        <div>
-            <label for="letra">Digite uma letra</label> 
+        <div class="entradas">
+            <label for="letra">Chute uma letra ou palavra</label> 
             <input type="text" id="letraEscolhida">
             <!--<button onclick="escolherpalavra()">Sortear palavra</button> -->
             <button onclick="verificarLetra()" id="letra" name="letra" value="letra" >Verificar</button>
         </div>
         <script>
             let palavraSorteada = escolherpalavra();
-            //verificar a palavra toda é importante!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            let tamanhoPalavra = palavraSorteada.length; //verificando o tamanho da palavra
+            let palavraNaTela = window.document.getElementById('palavraNaTela'); //pegando a tag que vou escrever os tracinhos
+            palavraNaTela.innerHTML = '_ '.repeat(tamanhoPalavra); //escrevdeno os tracinhos utilizando a funçao repeat
+            console.log(palavraSorteada + tamanhoPalavra);
+            
 
             function escolherpalavra() {
                 let lista = ['computador', 'teclado', 'mouse', 'fone', 'monitor']; //lista de elementos
                 let indiceAleatorio =  Math.floor(Math.random() * lista.length); //sorteando um indice 
                 let elementoSorteado = lista[indiceAleatorio]; //pegando um elemento da lista a partir fo indice
-                let tamanhoPalavra = elementoSorteado.length; //verificando o tamanho da palavra
-                let palavraNaTela = window.document.getElementById('palavraNaTela')
-                palavraNaTela.innerHTML = '_ '.repeat(tamanhoPalavra)
-                console.log(elementoSorteado + tamanhoPalavra);
                 return elementoSorteado;
             }
 
             function verificarLetra() {
                 let letra = window.document.getElementById('letraEscolhida').value;
                 contador = 0;
-                let palavraCerta = palavraSorteada.replace(/\s/g, ''); // Removendo os espaços
-                
-                let listaChutes = [] //lista para guardar letraas que ja foram
-                let chutes = window.document.getElementById('tentativas');
-                tentativas.innerHTML = listaChutes;
 
-
-                for (let i of palavraCerta) {
+                for (let i of palavraSorteada) {
                     contador = contador + 1;
                     if (i === letra) {
                         console.log('tem');
                         let palavraNaTela = window.document.getElementById('palavraNaTela');
-                        let novoTexto = palavraNaTela.innerText.substring(0, contador-1) + letra + palavraNaTela.innerText.substring(contador + 1);
+                        
+                        let novoTexto = palavraNaTela.innerText.substring(0, contador -1) + letra + palavraNaTela.innerText.substring(contador + 1);
                         palavraNaTela.innerText = novoTexto;
-                        listaChutes.push(letra);
+                        let TemLetra = window.document.getElementById('avisos');
+                        TemLetra.innerHTML = `Continue assim! A letra "${letra}" está na palavra!`;
                         break;
                     }
-                    else if (letra != i) {
-                        listaChutes.push(letra);
+                    else if (palavraSorteada === letra) {
+                        let palavraCerta = window.document.getElementById('avisos');
+                        palavraCerta.innerHTML = `Parabens você acertou! a palavra era "${letra}"!`;
                     }
+                    else if (letra != i && letra.length == 1) {
+                        let naoTemLetra = window.document.getElementById('avisos');
+                        naoTemLetra.innerHTML = `Ops! a letra "${letra}" não está na palavra...`;
+                    }
+                    else if (palavraSorteada != letra && letra.length > 3) {
+                        let palavraCerta = window.document.getElementById('avisos');
+                        palavraCerta.innerHTML = `Ops! você errou! a palavra era "${palavraSorteada}"!`;
+                    }  
                 }
+             }
+             let contadorCor = 0;
+             function mudarCor() {
+                contadorCor++
+                let list = ['#B5DCF9','#E8BA86','#FFA8B8','#FFA8B8','#C5D084', '#A2EDCE','#E5BEDD',"#FFC8C3", "#D2C897", "#A9E5E3"];
+                let jogo = window.document.getElementById('jogo');
+                jogo.style.backgroundColor = list[contadorCor];
              }
         </script>
     </main>

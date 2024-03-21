@@ -1,0 +1,51 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #A0D995;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+main {
+    margin: auto;
+    margin-top: 50px;
+    height: 500px;
+    width: 450px;
+    text-align: center;
+    background-color: #A9E5E3;
+    border: 10px solid #FAE187;
+    border-radius: 30px;
+}
+.titulo {
+text-align: center;
+font-size: 50px;
+}
+.subtitulo {
+    text-align: center;
+}
+#palavraNaTela {
+    font-size: 35px;
+}
+.entradas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.entradas > input{
+    text-align: center;
+    width: 250px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.entradas > button {
+    width: 260px;
+    height: 50px;
+    margin-top: 10px;
+    background-color: #A2EDCE;
+    border: 3px solid #A0D995;
+    border-radius: 20px;
+}
+.entradas > button:hover{
+    background-color: #FAE187;
+    transition-duration: 0.7s;
+}
