@@ -11,6 +11,8 @@
         <div class="divTitulos">
             <h1 class="titulo">Jogo da Forca</h1>
             <h2 class="subtitulo">Objetos da computação</h2>
+            <div class="jaForam"><h3>Ja foram:</h3><p id="jaForam"></p></div>
+            <img id="img" src="1.png" alt="">
             <p id="avisos"></p>
             <p id="palavraNaTela"></p>
         </div>
@@ -21,53 +23,103 @@
             <button onclick="verificarLetra()" id="letra" name="letra" value="letra" >Verificar</button>
         </div>
         <script>
-            let palavraSorteada = escolherpalavra();
+            let listaJaForam = [] //lista para guardar o que ja foi
+            let palavraSorteada = escolherpalavra(); //chamando a funçao para sortear uma palavra
             let tamanhoPalavra = palavraSorteada.length; //verificando o tamanho da palavra
             let palavraNaTela = window.document.getElementById('palavraNaTela'); //pegando a tag que vou escrever os tracinhos
-            palavraNaTela.innerHTML = '_ '.repeat(tamanhoPalavra); //escrevdeno os tracinhos utilizando a funçao repeat
+            palavraNaTela.innerHTML = '_'.repeat(tamanhoPalavra); //escrevdeno os tracinhos utilizando a funçao repeat
+            contadorChances = 0; //contador que delimita o numero de chances de chutes de palavra
             console.log(palavraSorteada + tamanhoPalavra);
+          
             
-
             function escolherpalavra() {
                 let lista = ['computador', 'teclado', 'mouse', 'fone', 'monitor']; //lista de elementos
                 let indiceAleatorio =  Math.floor(Math.random() * lista.length); //sorteando um indice 
                 let elementoSorteado = lista[indiceAleatorio]; //pegando um elemento da lista a partir fo indice
                 return elementoSorteado;
             }
-
             function verificarLetra() {
-                let letra = window.document.getElementById('letraEscolhida').value;
+                let letra = window.document.getElementById('letraEscolhida').value; //pegando o dado da entrada do usuario
                 contador = 0;
+                // vendo se a letra ja foi
+                listaJaForam.push(letra) //adicionado itens na lista
+                let jaForam = window.document.getElementById('jaForam') //mostrando as letras que ja foram
+                jaForam.innerHTML = listaJaForam //mostrando na interface as palavras e letras que ja foram
+                console.log(listaJaForam)
 
                 for (let i of palavraSorteada) {
                     contador = contador + 1;
                     if (i === letra) {
                         console.log('tem');
                         let palavraNaTela = window.document.getElementById('palavraNaTela');
-                        
                         let novoTexto = palavraNaTela.innerText.substring(0, contador -1) + letra + palavraNaTela.innerText.substring(contador + 1);
                         palavraNaTela.innerText = novoTexto;
                         let TemLetra = window.document.getElementById('avisos');
                         TemLetra.innerHTML = `Continue assim! A letra "${letra}" está na palavra!`;
-                        break;
+                        break;   
                     }
                     else if (palavraSorteada === letra) {
                         let palavraCerta = window.document.getElementById('avisos');
                         palavraCerta.innerHTML = `Parabens você acertou! a palavra era "${letra}"!`;
+                        const tempoDeAtraso = 2000;
+                            setTimeout(() => { //para atrar um pouco o recarregamento da pagina
+                                window.location.reload(); //recarrega a pagina
+                            },tempoDeAtraso);
+                        break;
                     }
                     else if (letra != i && letra.length == 1) {
                         let naoTemLetra = window.document.getElementById('avisos');
                         naoTemLetra.innerHTML = `Ops! a letra "${letra}" não está na palavra...`;
+                        contadorChances = contadorChances + 1;
+                        if (contadorChances === 6){
+                            const tempoDeAtraso = 2000;
+                            setTimeout(() => { //para atrar um pouco o recarregamento da pagina
+                                window.location.reload(); //recarrega a pagina
+                            },tempoDeAtraso);
+                        }
+                        break
                     }
                     else if (palavraSorteada != letra && letra.length > 3) {
                         let palavraCerta = window.document.getElementById('avisos');
-                        palavraCerta.innerHTML = `Ops! você errou! a palavra era "${palavraSorteada}"!`;
+                        palavraCerta.innerHTML = `Ops! você errou! a palavra não era "${letra}"!`;
+                        contadorChances = contadorChances + 1;
+
+                        if (contadorChances === 1){
+                            let img = window.document.getElementById('img');
+                            img.src = '2.png';
+                        }
+                        if (contadorChances === 2){
+                            let img = window.document.getElementById('img');
+                            img.src = '3.png';
+                        }
+                        if (contadorChances === 3){
+                            let img = window.document.getElementById('img');
+                            img.src = '4.png';
+                        }
+                        if (contadorChances === 4){
+                            let img = window.document.getElementById('img');
+                            img.src = '5.png';
+                        }
+                        if (contadorChances === 5){
+                            let img = window.document.getElementById('img');
+                            img.src = '6.png';
+                        }
+                        else if (contadorChances === 6) { //se o contador cehegar a 5(numero de chances) você perde
+                            let img = window.document.getElementById('img');
+                            img.src = '7.png';
+                            palavraCerta.innerHTML = `Ops! você Perdeu! a palavra era "${palavraSorteada}"!`;
+                            const tempoDeAtraso = 2000;
+                            setTimeout(() => { //para atrar um pouco o recarregamento da pagina
+                                window.location.reload(); //recarrega a pagina
+                            },tempoDeAtraso);
+                        }
+                        break;
                     }  
                 }
              }
              let contadorCor = 0;
              function mudarCor() {
-                contadorCor++
+                contadorCor++;
                 let list = ['#B5DCF9','#E8BA86','#FFA8B8','#FFA8B8','#C5D084', '#A2EDCE','#E5BEDD',"#FFC8C3", "#D2C897", "#A9E5E3"];
                 let jogo = window.document.getElementById('jogo');
                 jogo.style.backgroundColor = list[contadorCor];

@@ -7,7 +7,7 @@ body {
 main {
     margin: auto;
     margin-top: 50px;
-    height: 500px;
+    max-height: 1000px;
     width: 450px;
     text-align: center;
     background-color: #A9E5E3;
@@ -23,6 +23,7 @@ font-size: 50px;
 }
 #palavraNaTela {
     font-size: 35px;
+    letter-spacing: 10px;
 }
 .entradas {
     display: flex;
@@ -44,8 +45,19 @@ font-size: 50px;
     background-color: #A2EDCE;
     border: 3px solid #A0D995;
     border-radius: 20px;
+    margin-bottom: 50px;
 }
 .entradas > button:hover{
     background-color: #FAE187;
     transition-duration: 0.7s;
+}
+.jaForam {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap ;
+}
+img {
+    margin-left: 50px;
 }
