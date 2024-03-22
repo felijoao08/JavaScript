@@ -47,64 +47,98 @@
                 jaForam.innerHTML = listaJaForam //mostrando na interface as palavras e letras que ja foram
                 console.log(listaJaForam)
 
+
+                let letraa = ''
                 for (let i of palavraSorteada) {
                     contador = contador + 1;
                     if (i === letra) {
-                        console.log('tem');
-                        let palavraNaTela = window.document.getElementById('palavraNaTela');
-                        let novoTexto = palavraNaTela.innerText.substring(0, contador -1) + letra + palavraNaTela.innerText.substring(contador + 1);
-                        palavraNaTela.innerText = novoTexto;
-                        let TemLetra = window.document.getElementById('avisos');
-                        TemLetra.innerHTML = `Continue assim! A letra "${letra}" está na palavra!`;
-                        break;   
-                    }
-                    else if (palavraSorteada === letra) {
-                        let palavraCerta = window.document.getElementById('avisos');
-                        palavraCerta.innerHTML = `Parabens você acertou! a palavra era "${letra}"!`;
-                        const tempoDeAtraso = 2000;
-                            setTimeout(() => { //para atrar um pouco o recarregamento da pagina
-                                window.location.reload(); //recarrega a pagina
-                            },tempoDeAtraso);
+                        letraa = 'sim';
                         break;
                     }
-                    else if (letra != i && letra.length == 1) {
-                        let naoTemLetra = window.document.getElementById('avisos');
-                        naoTemLetra.innerHTML = `Ops! a letra "${letra}" não está na palavra...`;
-                        contadorChances = contadorChances + 1;
-                        if (contadorChances === 6){
-                            const tempoDeAtraso = 2000;
-                            setTimeout(() => { //para atrar um pouco o recarregamento da pagina
-                                window.location.reload(); //recarrega a pagina
-                            },tempoDeAtraso);
-                        }
-                        break
+                    else {
+                        letraa = 'nao';
                     }
-                    else if (palavraSorteada != letra && letra.length > 3) {
-                        let palavraCerta = window.document.getElementById('avisos');
-                        palavraCerta.innerHTML = `Ops! você errou! a palavra não era "${letra}"!`;
-                        contadorChances = contadorChances + 1;
+                }
+                if (letraa == 'sim') {
+                    console.log('tem');
+                    let palavraNaTela = window.document.getElementById('palavraNaTela');
+                    let novoTexto = palavraNaTela.innerText.substring(0, contador -1) + letra + palavraNaTela.innerText.substring(contador + 1);
+                    palavraNaTela.innerText = novoTexto;
+                    let TemLetra = window.document.getElementById('avisos');
+                    TemLetra.innerHTML = `Continue assim! A letra "${letra}" está na palavra!`;
+                     
+                }
 
-                        if (contadorChances === 1){
+                else if (letraa == 'nao' && letra.length == 1) {
+                    let naoTemLetra = window.document.getElementById('avisos');
+                    naoTemLetra.innerHTML = `Ops! a letra "${letra}" não está na palavra...`;
+                    contadorChances = contadorChances + 1;
+                    if (contadorChances === 1){
                             let img = window.document.getElementById('img');
                             img.src = '2.png';
                         }
-                        if (contadorChances === 2){
+                    if (contadorChances === 2){
                             let img = window.document.getElementById('img');
                             img.src = '3.png';
                         }
-                        if (contadorChances === 3){
+                    if (contadorChances === 3){
                             let img = window.document.getElementById('img');
                             img.src = '4.png';
                         }
-                        if (contadorChances === 4){
+                    if (contadorChances === 4){
                             let img = window.document.getElementById('img');
                             img.src = '5.png';
                         }
-                        if (contadorChances === 5){
+                    if (contadorChances === 5){
                             let img = window.document.getElementById('img');
                             img.src = '6.png';
                         }
-                        else if (contadorChances === 6) { //se o contador cehegar a 5(numero de chances) você perde
+                    
+                    if (contadorChances === 6){
+                        naoTemLetra.innerHTML = `Ops! você Perdeu! a palavra era "${palavraSorteada}"!`;
+                        let img = window.document.getElementById('img');
+                        img.src = '7.png';
+                        const tempoDeAtraso = 2000;
+                        setTimeout(() => { //para atrar um pouco o recarregamento da pagina
+                            window.location.reload(); //recarrega a pagina
+                        },tempoDeAtraso);
+                    }
+                }
+
+                else if (palavraSorteada === letra) {
+                    let palavraCerta = window.document.getElementById('avisos');
+                    palavraCerta.innerHTML = `Parabens você acertou! a palavra era "${letra}"!`;
+                    const tempoDeAtraso = 2000;
+                        setTimeout(() => { //para atrar um pouco o recarregamento da pagina
+                            window.location.reload(); //recarrega a pagina
+                        },tempoDeAtraso);
+                       
+                }
+                else if (palavraSorteada !== letra && letra.length > 3) {
+                    let palavraCerta = window.document.getElementById('avisos');
+                    palavraCerta.innerHTML = `Ops! você errou! a palavra não era "${letra}"!`;
+                    contadorChances = contadorChances + 1;
+                    if (contadorChances === 1){
+                            let img = window.document.getElementById('img');
+                            img.src = '2.png';
+                        }
+                    if (contadorChances === 2){
+                            let img = window.document.getElementById('img');
+                            img.src = '3.png';
+                        }
+                    if (contadorChances === 3){
+                            let img = window.document.getElementById('img');
+                            img.src = '4.png';
+                        }
+                    if (contadorChances === 4){
+                            let img = window.document.getElementById('img');
+                            img.src = '5.png';
+                        }
+                    if (contadorChances === 5){
+                            let img = window.document.getElementById('img');
+                            img.src = '6.png';
+                        }
+                    else if (contadorChances === 6) { //se o contador cehegar a 5(numero de chances) você perde
                             let img = window.document.getElementById('img');
                             img.src = '7.png';
                             palavraCerta.innerHTML = `Ops! você Perdeu! a palavra era "${palavraSorteada}"!`;
@@ -112,11 +146,10 @@
                             setTimeout(() => { //para atrar um pouco o recarregamento da pagina
                                 window.location.reload(); //recarrega a pagina
                             },tempoDeAtraso);
-                        }
-                        break;
+                        }    
                     }  
                 }
-             }
+
              let contadorCor = 0;
              function mudarCor() {
                 contadorCor++;
