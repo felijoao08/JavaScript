@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    font-family: monospace;
+    background-color: #37AEDD;
+    text-align: center;
+}
+#titulo {
+    height: 200px;
+    margin-bottom: 20px;
+}
+#game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    width: 850px;
+    background-color: #A4E288;
+    
+}
+button {
+    margin: 20px;
+    height: 30px;
+    width: 100px;
+    background-color: #A4E288;
+    color: white;
+}
+.card {
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    cursor: pointer;
+    background-image: url('imagens/verso.png'); /* Imagem de verso das cartas */
+    background-size: cover;
+    background-position: center;
+  
+
+}
