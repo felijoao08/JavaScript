@@ -1,0 +1,53 @@
+/*Aqui irei organizar o meu hero*/
+.hero {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 900px;
+    max-width:1800px;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+.hero_art {
+    /*background-image: url('/imagens/fundo-hero.png');*/
+    max-width: 1800px;
+    height: 900px;
+    margin: auto;
+}
+.text_hero {
+    margin-left: 30px;
+}
+.text_hero > h1 {
+    font-size: 64px;
+    color: white;
+    margin-bottom: 20px;
+}
+.text_hero > p {
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 100px;
+}
+.img_hero > img {
+    height: 300px;
+    border: 1px solid white;
+    border-radius: 100%;
+     padding: 10px;
+}
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+.botao > a {
+    text-decoration: none;
+    color: white;
+}
+.botao:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition-duration: 0.5s;
+}

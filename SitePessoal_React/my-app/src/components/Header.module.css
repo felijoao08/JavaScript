@@ -1,0 +1,28 @@
+.navbar {
+    background-color: #171C26;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.navbar > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 75px;
+    border-radius: 20px;
+}
+.navbar > div:hover {
+    font-size: 25px;
+    transition-duration: 0.3s;
+}
+.navbar > div > a {
+    color: white;
+    text-decoration: none;
+}
+.logo {
+    font-size: 50px;
+    color: #F2BA52;
+}
