@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0c0e13;
+
+} 
+html {
+  scroll-behavior: smooth;
+}
+header {
+  position: sticky;
+  top: 0;
+  box-shadow: 5px 5px 10px 0px rgb(0, 0, 0, 0.5);
+}
+/*===========================================================*/
+#section_curiosidades {
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  max-width: 1800px;
+  max-height: 3025px;
+  display: flex;
+   flex-direction: column;
+  align-items: center;
+}
+.title_curiosidades {
+  text-align: center;
+  font-size: 64px;
+  padding-top: 70px;
+  margin-bottom: 30px;
+
+}
+.curiosidades {
+  max-width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/*============================================================*/
+.hobbies {
+  margin: auto;
+  padding-bottom: 100px;
+  max-width: 1800px;
+  background-color: white;
+}
+.passando_tempo {
+  max-width: 1400px;
+  margin: auto;
+}
+.text_hobbies > h1{
+  font-size: 64px;
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 30px;
+}
+.text_hobbies > p {
+  font-size: 20px;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+.text_hobbies > h3 {
+  font-size: 15px;
+  text-align: center;
+  margin: 10px 10px 20px 10px;
+}
+.descriçao_FIFA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2BA52;
+  text-align: center;
+  max-width: 500px;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 2px solid #171C26;
+}
+video {
+  height: 500px
+}
+.FIFA {
+  display: block;
+  margin: auto;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 0px rgb(0, 0, 0, 0.5);
+}
+@media only screen and (max-width: 800px) {
+    
+  /*parte: passando o tempo*/
+  video {
+      height: 300px;
+  }
+}
+@media only screen and (max-width: 1000px){
+ 
+  /*Parte: passando o tempo*/
+  video {
+      height: 350px;
+  }
+
+}

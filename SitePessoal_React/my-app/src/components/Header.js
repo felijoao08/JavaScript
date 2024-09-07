@@ -10,10 +10,10 @@ function Header() {
                 <a href="#sobre-mim">Sobre mim</a>
             </div>
             <div>
-                <a href="#Na-escola">Escola</a>
+                <a href="#Na-escola">Projetos</a>
             </div>
             <div>
-                <a href="#curiosidades">curiosidades</a>
+                <a href="#section_curiosidades">Curiosidades</a>
             </div>
             <div>
                 <a href="#hobbies">Hobbies</a>

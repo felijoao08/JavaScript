@@ -9,7 +9,7 @@
     align-items: center;
     flex-wrap: wrap-reverse;
 }
-.hero_art {
+.hero_art { 
     /*background-image: url('/imagens/fundo-hero.png');*/
     max-width: 1800px;
     height: 900px;

@@ -1,0 +1,28 @@
+/*Aqui irei organizar a parte de contatos*/
+.tudo {
+    max-width: 1800px;
+    height: 250px;
+    margin: auto;
+    background-color: #171C26;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 5px solid #F2BA52;
+  }
+  
+.imgContatos {
+    height: 130px;
+}
+.listaContatos {
+    font-size: 20px;
+    color: white;
+    margin-left: 30px;
+    margin-top: 60px;
+}
+@media only screen and (max-width: 700px) {
+    /*parte dos contatos*/
+    .tudo {
+        height: 300px;
+    }
+}
