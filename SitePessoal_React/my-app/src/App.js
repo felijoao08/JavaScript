@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import SobreMim from './components/SobreMim';
 import Curiosidades from './components/Curiosidades';
 import Footer from './components/Footer';
+import Projetos from './components/Projetos';
 
 function App() {
   return (
@@ -14,6 +15,12 @@ function App() {
         <main>
             <Hero />
             <SobreMim/>
+            <h1 id="projetos_title">Projetos</h1>
+            <section className='projetos'>
+              <Projetos foto='enapne.png' tituloCard='eNAPNE' textoCard='Sitema desenvolvido para atender as demandas do NAPNE e o preenchimento da documentação PEI.' link='Ir ate o repositorio' repositorio='https://github.com/gilbran-ifrn/enapne'/> 
+              <Projetos foto='BlushGlamour-footer.png'tituloCard='BlushGlamour' textoCard='Sistema de uma loja online de maquiagens.' link='Ir ate o repositorio' repositorio='https://github.com/Everaldo-ifrn/Projeto-BlushGlamour' /> 
+              <Projetos foto='jardel.png'tituloCard='Site Professor Jardel Pereira' textoCard='Site Pessoal do Professor de quimica do IF Ceará-Mirim, Jardel Ricardo Pereira de França.' link='Ir ate o repositorio' repositorio='https://github.com/felijoao08/aweb/tree/main/2-3-bimestre/site-professor'/> 
+            </section>
             <section id="section_curiosidades">
               <h1 className="title_curiosidades">curiosidades</h1>
               <div className="curiosidades">

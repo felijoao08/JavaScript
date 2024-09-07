@@ -10,7 +10,8 @@
     flex-wrap: wrap-reverse;
 }
 .hero_art { 
-    /*background-image: url('/imagens/fundo-hero.png');*/
+    background-image: url('/src/5053309.jpg');
+
     max-width: 1800px;
     height: 900px;
     margin: auto;
