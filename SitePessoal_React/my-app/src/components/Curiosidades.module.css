@@ -29,3 +29,22 @@
     margin-top: 15px;
     margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 500px){
+    /*Parte: Curiosidades */
+    .title_curiosidades {
+        font-size: 40px;
+    }
+    .cards {
+        height: 320px !important;
+        max-width: 400px;
+    }
+    .imgCard > img{
+        height: 130px;
+    }
+    .textCard > p {
+        font-size: 15px !important;
+        
+    }
+
+  }

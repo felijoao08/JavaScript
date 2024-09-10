@@ -35,6 +35,13 @@
     border-radius: 100%;
      padding: 10px;
 }
+.img_hero > img:hover {
+    height: 330px;
+    transition-duration: 1s;
+
+}
+
+
 .botao {
     display: flex;
     align-items: center;
@@ -52,3 +59,33 @@
     background-color: rgba(255, 255, 255, 0.5);
     transition-duration: 0.5s;
 }
+
+@media only screen and (max-width: 500px){
+    /*Parte: hero */
+    .hero {
+        height: 750px;
+    }
+    .hero_art {
+        height: 750px;
+    }
+    .text_hero {
+        padding-bottom: 30px;
+    }
+    .text_hero > h1 {
+        font-size: 35px;
+        margin-left: 0;
+    }
+    .botao { 
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    /*parte: hero*/
+    .text_hero > p {
+        font-size: 25px;
+    }
+    .img_hero > img {
+        height: 250px;
+    }
+  }

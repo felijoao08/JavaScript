@@ -128,3 +128,35 @@ video {
   margin-bottom: 30px;
   color: white;
 }
+
+/*======================================================*/
+/*AQUI IREI TRATAR DAS MEDIAS QUERIES*/
+@media only screen and (max-width: 500px){
+  /*Parte: hobbbies*/
+  .FIFA {
+      width: 300px !important;
+      height: 300px !important;
+  }
+  .descriçao_FIFA {
+      margin: 10px;
+  }
+  .text_hobbies > h1 { 
+      font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  
+  /*parte: passando o tempo*/
+  video {
+      height: 300px;
+  }
+}
+
+@media only screen and (max-width: 1000px){
+  /*Parte: passando o tempo*/
+  video {
+      height: 350px;
+  }
+ 
+}

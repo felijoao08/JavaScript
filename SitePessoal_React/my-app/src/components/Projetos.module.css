@@ -46,3 +46,22 @@ a:hover {
     font-size: 18px;
     transition-duration: 0.5s;
 }
+
+@media only screen and (max-width: 500px){
+    /*Parte: Projetos */
+    .title_curiosidades {
+        font-size: 40px;
+    }
+    .cards {
+        height: 380px !important;
+        max-width: 400px;
+    }
+    .imgCard > img{
+        height: 130px;
+    }
+    .textCard > p {
+        font-size: 15px !important;
+        
+    }
+
+  }
