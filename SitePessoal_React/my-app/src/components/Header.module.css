@@ -50,5 +50,6 @@
     .navbar > div:hover {
         background-color: #f0af36;
         transition-duration: 1s;
+        color: white;
     }
 }
