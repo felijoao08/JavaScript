@@ -17,8 +17,8 @@ function App() {
             <SobreMim/>
             <h1 id="projetos_title">Projetos</h1>
             <section className='projetos'>
-              <Projetos foto='enapne.png' tituloCard='eNAPNE' textoCard='Sitema desenvolvido para atender as demandas do NAPNE e o preenchimento da documentação PEI.' link='Ir ate o repositorio' repositorio='https://github.com/gilbran-ifrn/enapne'/> 
-              <Projetos foto='BlushGlamour-footer.png'tituloCard='BlushGlamour' textoCard='Sistema de uma loja online de maquiagens.' link='Ir ate o repositorio' repositorio='https://github.com/Everaldo-ifrn/Projeto-BlushGlamour' /> 
+              <Projetos foto='enapne.png' tituloCard='eNAPNE' textoCard='Sitema desenvolvido para atender as demandas do NAPNE.' link='Ir ate o repositorio' repositorio='https://github.com/gilbran-ifrn/enapne'/> 
+              <Projetos foto='BlushGlamour-footer.png'tituloCard='BlushGlamour' textoCard='Sistema desenvolvido para atender as demandas de uma loja online de maquiagens.' link='Ir ate o repositorio' repositorio='https://github.com/Everaldo-ifrn/Projeto-BlushGlamour' /> 
               <Projetos foto='jardel.png'tituloCard='Site Professor Jardel Pereira' textoCard='Site Pessoal do Professor de quimica do IF Ceará-Mirim, Jardel Ricardo Pereira de França.' link='Ir ate o repositorio' repositorio='https://github.com/felijoao08/aweb/tree/main/2-3-bimestre/site-professor'/> 
             </section>
             <section id="section_curiosidades">

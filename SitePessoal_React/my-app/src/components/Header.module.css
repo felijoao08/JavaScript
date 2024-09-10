@@ -18,6 +18,10 @@
     font-size: 25px;
     transition-duration: 0.3s;
 }
+.navbar > div > a:hover {
+    color: #F2BA52;
+
+}
 .navbar > div > a {
     color: white;
     text-decoration: none;
