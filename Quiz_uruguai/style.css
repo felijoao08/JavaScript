@@ -16,7 +16,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-end;
-    background-image: url(imagens/fundo.png);
+    background-image: url(imagens/Design\ sem\ nome\ \(2\).png);
     height: 600px;
     width: 1050px;
     border-radius: 30px;
@@ -27,6 +27,7 @@ body {
     height: 400px;
     width: 650px;
     border-radius: 20px;
+    border: 10px solid #F2E422;
 }
 .perguntas > h1 {
     text-align: center;
@@ -43,6 +44,8 @@ button {
 button:hover {
     background-color: #F2E422;
     transition-duration: 0.5s;
+    height: 55px;
+    width: 305px;
 }
 h1 {
     text-align: center;
@@ -50,4 +53,10 @@ h1 {
 img {
     width: 600px;
     margin: auto;
+}
+#lugar {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    font-size: 30px;
 }

@@ -7,16 +7,116 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="imagens/Quiz Uruguai (1).png" alt="">
+    <img src="imagens/Quiz Uruguai.png" alt="">
     <div class="Quiz">
         <div class="perguntas">
-            <h1>Perguntas:</h1>
+            <h1 id="titulo">Vamos jogar!</h1>
+            <div id="lugar"></div>
         </div>
     </div>
-    <button>Sortear</button>
-
+    <button onclick="sortear()">Sortear</button>
+    <button onclick="resultado()">Verificar</button>
 </body>
 <script>
+    const perguntas = {
+        1: "Qual é a dança tradicional mais famosa do Uruguai?",
+        2: "Quem é o escritor uruguaio autor de 'Las Venas Abiertas de América Latina'?",
+        3: "Qual é o prato típico do Uruguai feito com carne grelhada?",
+        4: "Qual é o nome do estilo musical popular do Uruguai, semelhante ao tango?",
+        5: "Qual bebida é tradicionalmente consumida no Uruguai e compartilhada entre amigos?",
+        6: "Qual é a importância da festa de 'Carnaval' na cultura uruguaia?",
+        7: "Que artista uruguaio é famoso por suas esculturas de cavaleiros e figuras humanas?",
+        8: "Como se chama o famoso mercado gastronômico em Montevidéu?",
+        9: "Quem é o cineasta uruguaio conhecido por filmes como 'Whisky'?",
+        10: "Que evento literário importante acontece anualmente em Montevidéu?",
+        11: "Qual é a capital do Uruguai?",
+        12: "Qual é o nome do principal rio que atravessa o Uruguai?",
+        13: "O Uruguai faz fronteira com quais países?",
+        14: "Qual é a maior cidade do Uruguai?",
+        15: "Qual é o nome da famosa praia de Punta del Este?",
+        16: "Em qual parte da América do Sul o Uruguai está localizado?",
+        17: "Como se chama o ponto mais alto do Uruguai?",
+        18: "O Uruguai tem montanhas ou é majoritariamente plano?",
+        19: "Qual oceano banha a costa do Uruguai?",
+        20: "Qual é o principal recurso natural do Uruguai?",
+        21: "Quem é considerado o maior jogador de futebol da história do Uruguai?",
+        22: "Em que ano o Uruguai sediou e venceu a primeira Copa do Mundo de futebol?",
+        23: "Qual é o estádio mais famoso do Uruguai, onde ocorreu a primeira final da Copa do Mundo?",
+        24: "Qual clube uruguaio tem a maior quantidade de títulos de futebol no país?",
+        25: "Quem é o artilheiro histórico da seleção uruguaia?",
+        26: "Qual jogador uruguaio ficou famoso por sua habilidade e polêmicas na Copa do Mundo de 2010 e 2014?",
+        27: "Qual é o maior clássico do futebol uruguaio?",
+        28: "Quantos títulos de Copa América a seleção uruguaia conquistou?",
+        29: "Quem é o atual treinador da seleção uruguaia?",
+        30: "Qual jogador uruguaio é conhecido por seu sucesso no futebol europeu, principalmente no Barcelona e no Atlético de Madrid?"
+    };
 
+    let chavesSorteadas = [];
+
+    function sortear() {
+        let title = document.getElementById('titulo')
+        title.innerHTML = "Perguntas"
+        // Converte o objeto perguntas para um array de pares chave-valor
+        const chaves = Object.keys(perguntas);
+        // Embaralha a lista de chaves
+        const chavesEmbaralhadas = chaves.sort(() => 0.5 - Math.random());
+        // Seleciona as 3 primeiras chaves embaralhadas
+        chavesSorteadas = chavesEmbaralhadas.slice(0, 3);
+
+        // Seleciona o elemento HTML onde as perguntas serão exibidas
+        let lugar = document.getElementById("lugar");
+
+        // Insere as perguntas sorteadas no elemento "lugar"
+        lugar.innerHTML = chavesSorteadas.map(chave => `<p>${chave}. ${perguntas[chave]}</p>`).join('');
+
+        // Não exibe números na mesma hora
+        document.getElementById("resultado").innerHTML = '';
+    }
+    
+    const respostasUruguai = [
+        "1. A dança tradicional mais famosa do Uruguai é o Candombe.",
+        "2. Eduardo Galeano é o autor de 'Las Venas Abiertas de América Latina'.",
+        "3. O prato típico do Uruguai feito com carne grelhada é o Asado.",
+        "4. O estilo musical semelhante ao tango, popular no Uruguai, é o Milonga.",
+        "5. A bebida tradicionalmente consumida no Uruguai é o Mate.",
+        "6. O Carnaval no Uruguai é o mais longo do mundo e é uma parte importante da cultura com desfiles e apresentações de murga.",
+        "7. O artista uruguaio famoso por suas esculturas é José Belloni.",
+        "8. O famoso mercado gastronômico em Montevidéu é o Mercado del Puerto.",
+        "9. O cineasta uruguaio conhecido por 'Whisky' é Juan Pablo Rebella.",
+        "10. A Feira Internacional do Livro de Montevidéu é o principal evento literário do país.",
+        "11. A capital do Uruguai é Montevidéu.",
+        "12. O principal rio que atravessa o Uruguai é o Rio Uruguai.",
+        "13. O Uruguai faz fronteira com o Brasil ao norte e a Argentina a oeste.",
+        "14. A maior cidade do Uruguai é Montevidéu.",
+        "15. A famosa praia de Punta del Este é Playa Brava, conhecida pela escultura 'La Mano'.",
+        "16. O Uruguai está localizado no sudeste da América do Sul.",
+        "17. O ponto mais alto do Uruguai é o Cerro Catedral, com 514 metros de altitude.",
+        "18. O Uruguai é majoritariamente plano, com colinas suaves.",
+        "19. O oceano que banha a costa do Uruguai é o Oceano Atlântico.",
+        "20. O principal recurso natural do Uruguai é o solo fértil para a agricultura e pecuária.",
+        "21. O maior jogador de futebol da história do Uruguai é considerado Alcides Ghiggia, que marcou o gol na final da Copa do Mundo de 1950.",
+        "22. O Uruguai sediou e venceu a primeira Copa do Mundo de futebol em 1930.",
+        "23. O estádio mais famoso do Uruguai é o Estádio Centenário.",
+        "24. O clube uruguaio com mais títulos é o Club Nacional de Football.",
+        "25. O artilheiro histórico da seleção uruguaia é Luis Suárez.",
+        "26. O jogador famoso por sua habilidade e polêmicas em 2010 e 2014 é Luis Suárez.",
+        "27. O maior clássico do futebol uruguaio é entre Nacional e Peñarol.",
+        "28. A seleção uruguaia conquistou 15 títulos de Copa América.",
+        "29. O atual treinador da seleção uruguaia é Marcelo Bielsa (até 2023).",
+        "30. O jogador uruguaio famoso por seu sucesso no futebol europeu é Luis Suárez, que jogou no Barcelona e Atlético de Madrid."
+    ];
+
+
+    function resultado() {
+        // Exibe os números sorteados, se houver algum sorteio
+        let resultadoDiv = document.getElementById("lugar");
+        let title = document.getElementById('titulo')
+        title.innerHTML = "Respostas"
+        if (chavesSorteadas.length > 0) {
+            resultadoDiv.innerHTML = chavesSorteadas.map(chave => `<p>${respostasUruguai[chave - 1]}</p>`).join('');
+        } else {
+            resultadoDiv.innerHTML = '<p>Nenhuma pergunta sorteada ainda.</p>';
+        }
+    }
 </script>
 </html>
