@@ -1,0 +1,48 @@
+
+body {
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+div {
+    background-color: rgb(124, 124, 241);
+    height: 100px;
+    width: 100px;
+    /*position: relative; PARA ANIMAÇAO*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: example2; /*PARA ANIMAÇAO*/
+    animation-duration: 4s; /*PARA ANIMAÇAO*/
+    animation-iteration-count: infinite /*PARA ANIMAÇAO*/
+   }
+
+/*AQUI IREI TESTAR A PROPRIEDADE TRANSFORM
+
+div:hover {
+    transform: rotateX(180deg); /* Rotaciona o elemento em torno do eixo X
+    transform: rotateY(180deg); /* Rotaciona o elemento em torno do eixo Y 
+    border-radius: 100%;
+    background: linear-gradient(to right, rgb(124, 124, 241), #D8BFD8);
+    transition-timing-function: ease;   
+}
+*/
+
+/*ANIMAÇAO*/
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:150px; top:300px;}
+    75%  {background-color:green; left:0px; top:400px;}
+    100% {background-color:red; left:250px; top:200px;}
+  }
+  @keyframes example2 {
+    0%   {background-color:red; transform: rotateX(180deg);  transform: rotateY(90deg);}
+    25%  {background-color:yellow;}
+    50%  {background-color:blue;}
+    75%  {background-color:green;}
+    100% {background-color:red; }
+  }
